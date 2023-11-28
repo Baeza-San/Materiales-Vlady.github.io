@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales Vlady-Inicio</title>
+
+    <!-- Agrega un ícono o logo a tu página -->
+    <link rel="icon" href="LogoMV.jpeg" type="image/x-icon">
+
+    <!-- Incluye la biblioteca de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-5/CS+UUvQqWH+aGMA2xCYZDRPmVnI0yv9TzL8Au66A3bmUoOdOVq4pK41M4dPLNDzufOJKk+nTkS6LUAoHNbYw==" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/0c65349377.js" crossorigin="anonymous"></script>
+
+    <!-- Agrega estos enlaces en la sección head de tu HTML -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+
+    
+    <!-- Estilo CSS -->
+    <style>
+        main {
+            padding: 20px;
+            margin-top: 70px;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            
+              
+        background: url('FondoMaterialesVladi.jpg') center/cover no-repeat fixed; /* Cambia 'tu_imagen_de_fondo.jpg' con la URL de tu imagen de fondo */
+            position: relative;
+        }
+        
+        /* Agrega un fondo oscuro semi-transparente */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            
+            
+        height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Ajusta el último valor para cambiar la opacidad (0 es transparente, 1 es completamente opaco) */
+        z-index: -1;
+        }
+        
+        header {
+            background-color: #000; /* Color negro para el menú */
+            padding: 15px;
+            color: #fff; /* Color blanco para el texto del menú */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+
+        header a {
+            color: #fff; /* Color blanco para los enlaces del menú */
+            text-decoration: none;
+            padding: 14px 16px;
+            display: inline-block;
+            transition: transform 0.3s ease-out;
+        }
+
+        header a:hover {
+            background-color: #333; /* Color gris oscuro al pasar el ratón */
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .logo {
+            width: 70px;
+            height: 50px;
+            margin-right: 5px;
+        }
+
+        main {
+            margin-top: 70px;
+            padding: 20px;
+        }
+
+        /* Agrega estilos de animación aquí */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease-out;
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff; /* Color blanco para el título */
+        }
+
+        footer {
+            text-align: left;
+            padding: 10px;
+            background-color: #000; /* Color negro para el pie de página */
+            color: #fff; /* Color blanco para el texto del pie de página */
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000; /* Asegura que el pie de página esté sobre otros elementos */
+            display: none; /* Inicialmente oculto */
+        }
+
+        /* Estilo para los iconos */
+        .fas {
+            margin-right: 5px;
+        }
+
+        .company-name {
+            font-size: 1.7em; /* Tamaño del texto del nombre de la empresa */
+            margin-right: 400px; /* Espaciado a la derecha del logo */
+            color: #fff; /* Color blanco para el texto del nombre de la empresa */
+        }
+    
+        /* Estilo para el contenedor del carrusel */
+        .carousel {
+            width: 90%; /* Ajusta el ancho del carrusel según tus necesidades */
+            margin: auto; /* Centra el carrusel en la página */
+        }
+
+        /* Estilo para las imágenes dentro del carrusel */
+        .carousel-item img {
+            width: 100%; /* Establece el ancho de la imagen al 100% del contenedor */
+            height: auto; /* Permite que la altura se ajuste automáticamente según el ancho */
+        }
+
+        .centered-content {
+            text-align: center;
+            margin: auto;
+            width: 70%; /* Ajusta el ancho según tus necesidades */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .centered-content img {
+            width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+            max-width: 400px; /* Define el ancho máximo de la imagen según tus necesidades */
+            height: auto;
+            margin-right: 20px; /* Espacio entre la imagen y el texto */
+        }
+
+        .centered-content div {
+            max-width: 60%; /* Ajusta el ancho del contenido de texto según tus necesidades */
+        }
+
+        .centered-content h2,
+        .centered-content p {
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="LogoMV.jpeg" alt="Logo de tu negocio" class="logo">
+        <span class="company-name">Materiales Vlady</span>
+
+        <div>
+            <a href="http://127.0.0.1:5500/Home.html"><i class="fas fa-home"></i> Inicio</a>
+            <a href="http://127.0.0.1:5500/Producto.html"><i class="fas fa-box"></i> Productos</a>
+            <a href="http://127.0.0.1:5500/Servicios.html"><i class="fas fa-cogs"></i> Servicios</a>
+            <a href="http://127.0.0.1:5500/Proveedores.html"><i class="fas fa-truck"></i> Proveedores</a>
+            <a href="http://127.0.0.1:5500/Contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
+</div>
+    </header>
+
+    <!--carrusel De Inicio -->
+    <div class="carousel">
+        <div class="carousel-item"><img src="Anuncio1.jpg" alt="Imagen 1"></div>
+        <div class="carousel-item"><img src="Anuncio2.2.jpg" alt="Imagen 2"></div>
+        <div class="carousel-item"><img src="Anuncio3.jpg" alt="Imagen 3"></div>
+        <div class="carousel-item"><img src="Anuncio4.jpg" alt="Imagen 4"></div>
+    </div>
+
+    <main>
+        <div class="centered-content" style="margin-bottom: 20px;">
+            <div>
+                <h2>Materiales Vlady</h2>
+                <p>
+                    Bienvenidos a Materiales Vlady, donde nos comprometemos a ofrecer productos de la más alta calidad
+                    y llevarlos directamente a los lugares donde planean construir sus proyectos más extraordinarios.
+                    Descubran la excelencia en cada material, ¡haciendo realidad sus sueños de construcción!
+                </p>
+            </div>
+            <img src="Img1.jpeg" alt="Descripción de la imagen">
+        </div>
+        
+        <div class="centered-content">
+            <div>
+                <h2>De confianza</h2>
+                <p>
+                    En Materiales Vlady, nos enorgullece ser su proveedor de confianza, comprometidos con la entrega de
+                    productos excepcionales para satisfacer sus necesidades de construcción. Nuestra dedicación va más
+                    allá de la venta; nos esforzamos por ser su socio en cada proyecto, brindándoles la calidad que merecen.
+                </p>
+            </div>
+            <img src="Img2.jpeg" alt="Descripción de la otra imagen">
+        </div>
+
+    </main>
+
+
+    
+    <footer>
+        <p>&copy; 2023 Materiales Vlady. Todos los derechos reservados.</p>
+        <a href="https://maps.app.goo.gl/5KdYmh9vJqWsrL3d6"><i class="fas fa-map-marker-alt"></i> Calle faustino zanches y porvenir, 24440 Santo Domingo Kesté, Camp. </a>
+    </footer>
+
+    <!-- Agrega este script al final de tu cuerpo HTML -->
+    
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $('.carousel').slick({
+            autoplay: true,  // Activar reproducción automática
+            autoplaySpeed: 2000,  // Velocidad de cambio de imagen en milisegundos (2 segundos en este ejemplo)
+            arrows: false,  // Ocultar flechas de navegación (puedes cambiar a true si las quieres)
+            dots: true,  // Mostrar puntos de navegación
+            infinite: true,  // Hacer el carrusel infinito
+            speed: 500,  // Velocidad de transición en milisegundos (0.5 segundos en este ejemplo)
+            slidesToShow: 1,  // Número de imágenes a mostrar a la vez
+            slidesToScroll: 1  // Número de imágenes a desplazarse en cada cambio
+        });
+    });
+</script>
+
+    <script>
+        // Agrega el código de desplazamiento aquí
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                var contentHeight = $('body').height();
+                var windowHeight = $(window).height();
+                var scroll = $(window).scrollTop();
+
+                if (contentHeight - (scroll + windowHeight) < 10) {
+                    $('footer').fadeIn();
+                } else {
+                    $('footer').fadeOut();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

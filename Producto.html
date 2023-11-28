@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales Vlady-Productos</title>
+    
+    <!-- Agrega un ícono o logo a tu página -->
+    <link rel="icon" href="LogoMV.jpeg" type="image/x-icon">
+    
+    <!-- Incluye la biblioteca de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-5/CS+UUvQqWH+aGMA2xCYZDRPmVnI0yv9TzL8Au66A3bmUoOdOVq4pK41M4dPLNDzufOJKk+nTkS6LUAoHNbYw==" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/0c65349377.js" crossorigin="anonymous"></script>
+   
+   
+    <!-- Estilo CSS -->
+    <style>
+
+        main {
+            padding: 20px;
+            margin-top: 70px;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            
+              
+        background: url('FondoMaterialesVladi.jpg') center/cover no-repeat fixed; /* Cambia 'tu_imagen_de_fondo.jpg' con la URL de tu imagen de fondo */
+            position: relative;
+        }
+        
+        /* Agrega un fondo oscuro semi-transparente */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            
+            
+        height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Ajusta el último valor para cambiar la opacidad (0 es transparente, 1 es completamente opaco) */
+        z-index: -1;
+        }
+
+        header {
+            background-color: #000; /* Color negro para el menú */
+            padding: 15px;
+            color: #fff; /* Color blanco para el texto del menú */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            z-index: 1000;
+            transition: top 0.3s;
+        }
+
+        header a {
+            color: #fff; /* Color blanco para los enlaces del menú */
+            text-decoration: none;
+            padding: 14px 16px;
+            display: inline-block;
+            transition: transform 0.3s ease-out;
+        }
+
+        header a:hover {
+            background-color: #333; /* Color gris oscuro al pasar el ratón */
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        .logo {
+            width: 70px;
+            height: 50px;
+            margin-right: 5px;
+        }
+
+        main {
+            margin-top: 70px;
+            padding: 20px;
+        }
+
+        /* Agrega estilos de animación aquí */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease-out;
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff; /* Color blanco para el título */
+        }
+
+        
+        footer {
+            text-align: left;
+            padding: 10px;
+            background-color: #000; /* Color negro para el pie de página */
+            color: #fff; /* Color blanco para el texto del pie de página */
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            z-index: 1000; /* Asegura que el pie de página esté sobre otros elementos */
+            display: none; /* Inicialmente oculto */
+        }
+
+        /* Estilo para los iconos */
+        .fas {
+            margin-right: 5px;
+        }
+
+
+        .company-name {
+            font-size: 1.7em; /* Tamaño del texto del nombre de la empresa */
+            margin-right: 400px; /* Espaciado a la derecha del logo */
+            color: #fff; /* Color blanco para el texto del nombre de la empresa */
+        }
+        
+        /*Productos css*/
+        .providers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .product-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .product-image {
+            width: 150px;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 10px;
+        }
+
+        .product-box p {
+            color: #fff;
+            font-size: 1.0em;
+        }
+
+        /* Clases específicas para cada producto */
+        .product1-box .product-image {
+            background-image: url('Procemento2.png');
+        }
+
+        .product2-box .product-image {
+            background-image: url('ProFlexometro.png');
+        }
+
+        .product3-box .product-image {
+            background-image: url('ProArco2.png');
+        }
+
+        .product4-box .product-image {
+            background-image: url('ProTubo.png');
+        }
+
+        .product5-box .product-image {
+            background-image: url('ProMasilla.png');
+        }
+
+        .product6-box .product-image {
+            background-image: url('ProPerfil.png');
+        }
+
+        .product7-box .product-image {
+            background-image: url('ProPua.png');
+        }
+
+        .product8-box .product-image {
+            background-image: url('ProCarretilla.png');
+        }
+
+        .product9-box .product-image {
+            background-image: url('Propala.png');
+        }
+
+        .product10-box .product-image {
+            background-image: url('ProTornillo.png');
+        }
+
+        .product11-box .product-image {
+            background-image: url('ProTornillo22.png');
+        }
+
+        .product12-box .product-image {
+            background-image: url('ruta_de_tu_imagen/producto6.jpg');
+        }
+
+
+        /*En negrita la letra o resaltada*/
+        /*p {font-weight:bold;}*/
+
+        /*Colores letras*/
+        p.red {color:red;}
+
+        p.blue {color:#0000ff;}
+
+        p.green {color: rgb(0, 128, 0);}
+
+        p.yellow {color:yellow;}
+
+        /*Aliniacion de fuente*/
+
+        span.sub {vertical-align: sub;
+                  color:red;  
+        }
+
+        /*Cuadro de color*/
+        .bloque {
+            height: 50px; 
+            width: 30px;
+            background-color: red;
+            display: inline-table;
+        }
+        .tex {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="LogoMV.jpeg" alt="Logo de tu negocio" class="logo">
+        <span class="company-name">Materiales Vlady</span>
+
+        <div>
+            <a href="http://127.0.0.1:5500/Home.html"><i class="fas fa-home"></i> Inicio</a>
+            <a href="http://127.0.0.1:5500/Producto.html"><i class="fas fa-box"></i> Productos</a>
+            <a href="http://127.0.0.1:5500/Servicios.html"><i class="fas fa-cogs"></i> Servicios</a>
+            <a href="http://127.0.0.1:5500/Proveedores.html"><i class="fas fa-truck"></i> Proveedores</a>
+            <a href="http://127.0.0.1:5500/Contacto.html"><i class="fas fa-envelope"></i> Contacto </a>
+        </div>
+    </header>
+
+
+    <main>
+        <div class="title">
+            <h1>Productos</h1>
+        </div>
+
+        
+        <div class="providers-grid">
+            <!-- Producto 1 -->
+            
+            <div class="product-box product1-box">
+                <div class="product-image"></div>
+                <p>Cemento Cruz Azul 50KG 
+                    <div class="bloque">
+                        <div class="tex">
+                         Precio $100
+                        </div>   
+                    </div>
+                </p>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="product-box product2-box">
+                <div class="product-image"></div>
+                <p>Flexómetro 8 Metros Cinta 25 Mm <span class="sub">Precio $100</span></p>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="product-box product3-box">
+                <div class="product-image"></div>
+                <p>Arco profesional tubular de acero $170</p>
+            </div>
+
+            <!-- Producto 4 -->
+            <div class="product-box product4-box">
+                <div class="product-image"></div>
+                <p>Tubo sanitario de norma advance pvc 110mm $90</p>
+            </div>
+
+            <!-- Producto 5 -->
+            <div class="product-box product5-box">
+                <div class="product-image"></div>
+                <p>MASILLA 40 KG – CEMIX $160</p>
+            </div>
+
+            <!-- Producto 6 -->
+            <div class="product-box product6-box">
+                <div class="product-image"></div>
+                <p>PERFIL ZR200 C20 RECTANGULAR VERDE $420</p>
+            </div>
+    </main>
+
+    
+    <main>
+        <div class="providers-grid">
+            <!-- Producto 7 -->
+            <div class="product-box product7-box">
+                <div class="product-image"></div>
+                <p>PUA NACIONAL 34KG C12.5 $1,500</p>
+            </div>
+
+            <!-- Producto 8 -->
+            <div class="product-box product8-box">
+                <div class="product-image"></div>
+                <p>CAT504 CARRETILLA REFORZADA CON BASTIDOR METÁLICO 5 FT3 LLANTA NEUMÁTICA REFORZADA DE 4 CAPAS SURTEK $1,350</p>
+            </div>
+
+            <!-- Producto 9 -->
+            <div class="product-box product9-box">
+                <div class="product-image"></div>
+                <p>Pala Con Mango De Madera Con Puño Contractor Grip, Cuadrada Surtek  $220</p>
+            </div>
+
+            <!-- Producto 10 -->
+            <div class="product-box product10-box">
+                <div class="product-image"></div>
+                <p>TORNILLO AUTOPERFORANTE DE 1 PULGADA PLATA 50 PIEZAS $190</p>
+            </div>
+
+            <!-- Producto 11 -->
+            <div class="product-box product11-box">
+                <div class="product-image"></div>
+                <p>Tornillo Tipo Maquina Galvanizado Con Tuerca 1/4x1/2-100pzas $180</p>
+            </div>
+
+            <!-- Producto 12 -->
+            <div class="product-box product12-box">
+                <div class="product-image"></div>
+                <p>Producto 6</p>
+            </div>
+    </main>
+
+    
+    <footer>
+        <p>&copy; 2023 Materiales Vlady. Todos los derechos reservados.</p>
+        <a href="https://maps.app.goo.gl/5KdYmh9vJqWsrL3d6"><i class="fas fa-map-marker-alt"></i> Calle faustino zanches y porvenir, 24440 Santo Domingo Kesté, Camp. </a>
+    </footer>
+
+   
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+    // Agrega el código de desplazamiento aquí
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            var contentHeight = $('body').height();
+            var windowHeight = $(window).height();
+            var scroll = $(window).scrollTop();
+
+            if (contentHeight - (scroll + windowHeight) < 10) {
+                $('footer').fadeIn();
+            } else {
+                $('footer').fadeOut();
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>
+

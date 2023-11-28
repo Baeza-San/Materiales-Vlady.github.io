@@ -1,0 +1,53 @@
+Codigos para los colores.
+
+<p class="red"> Texto de color rojo </p>
+
+<p class="blue"> Texto de color azul </p>
+
+<p class="green"> Texto de color verde </p>
+
+<p class="yellow"> Texto de color amarillo </p>
+
+
+Alinacion de fuente En html
+
+<p>1 Elemento <span class="baseline">en baseline</span> ejemplo</p>
+
+<p>2 Elemento <span class="sub">en sub</span> ejemplo.</p>
+
+<p>3 Elemento <span class="super">en super</span> ejemplo.</p>
+
+<p>4 Elemento <span class="pix">con número -30px </span> ejemplo..</p>
+
+El css de alinacion de la fuente
+
+span.baseline {vertical-align: baseline;}
+
+span.sub {vertical-align: sub;}
+
+span.super {vertical-align: super;}
+
+span.pix {vertical-align: -30px;}
+
+Para poner en un cuadro los textos
+
+<div class="bloque">
+    <div class="tex">
+     este es un texto dentro de un contenedor div con nombre main y será alineado al medio verticamente
+    </div>   
+</div>
+
+el CSS
+
+.bloque {
+    height: 200px; 
+    width: 300px;
+    background-color: red;
+    display: inline-table;
+}
+.tex {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
