@@ -14,6 +14,8 @@
    
    
     <!-- Estilo CSS -->
+   
+    <!-- Estilo CSS -->
     <style>
 
         main {
@@ -130,81 +132,14 @@
         }
         
         /*Productos css*/
-        .providers-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            justify-content: center;
-            margin-top: 20px;
-        }
+        
 
-        .product-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .product-image {
+        .product-image2 {
             width: 150px;
             height: 150px;
             background-size: cover;
             background-position: center;
             margin-bottom: 10px;
-        }
-
-        .product-box p {
-            color: #fff;
-            font-size: 1.0em;
-        }
-
-        /* Clases específicas para cada producto */
-        .product1-box .product-image {
-            background-image: url('Procemento2.png');
-        }
-
-        .product2-box .product-image {
-            background-image: url('ProFlexometro.png');
-        }
-
-        .product3-box .product-image {
-            background-image: url('ProArco2.png');
-        }
-
-        .product4-box .product-image {
-            background-image: url('ProTubo.png');
-        }
-
-        .product5-box .product-image {
-            background-image: url('ProMasilla.png');
-        }
-
-        .product6-box .product-image {
-            background-image: url('ProPerfil.png');
-        }
-
-        .product7-box .product-image {
-            background-image: url('ProPua.png');
-        }
-
-        .product8-box .product-image {
-            background-image: url('ProCarretilla.png');
-        }
-
-        .product9-box .product-image {
-            background-image: url('Propala.png');
-        }
-
-        .product10-box .product-image {
-            background-image: url('ProTornillo.png');
-        }
-
-        .product11-box .product-image {
-            background-image: url('ProTornillo22.png');
-        }
-
-        .product12-box .product-image {
-            background-image: url('ruta_de_tu_imagen/producto6.jpg');
         }
 
 
@@ -220,25 +155,76 @@
 
         p.yellow {color:yellow;}
 
-        /*Aliniacion de fuente*/
+        /*TABLA CSS*/
 
-        span.sub {vertical-align: sub;
-                  color:red;  
+        .product-container {
+            display: flex;
+            justify-content: space-around; /* Opcional: distribuye los productos uniformemente */
+        }
+        
+        .product-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 220px; /* ajusta el ancho según tu necesidad */
+        }
+        
+        .product-box table {
+            width: 100%;
+        }
+        
+        .product-image1 {
+            background-image: url('ProCemento2.png');
+            background-size: cover;
+            width: 100%;
+            height: 200px; /* ajusta la altura según tu necesidad */
         }
 
-        /*Cuadro de color*/
-        .bloque {
-            height: 50px; 
-            width: 30px;
-            background-color: red;
-            display: inline-table;
+        .product-image2 {
+            background-image: url('ProFlexometro.png');
+            background-size: cover;
+            width: 100%;
+            height: 200px; /* ajusta la altura según tu necesidad */
         }
-        .tex {
-            display: table-cell;
-            vertical-align: middle;
+        
+        .product, .price {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .product {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .price {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .like-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-top: 5px;
         }
 
+        .heart-svg {
+            width: 20px;
+            height: 20px;
+            fill: #ccc;
+            transition: fill 0.3s ease;
+        }
+
+        .liked .heart-svg {
+            fill: #e74c3c; /* Color rojo cuando está "gustado" */
+        }
     </style>
+</head>
 </head>
 
 <body>
@@ -256,96 +242,74 @@
     </header>
 
 
+
     <main>
         <div class="title">
             <h1>Productos</h1>
         </div>
 
+        <div class="product-container">
+            <div class="product-box">
+                <table>
+                    <tr>
+                        <td class="product-image1"></td>
+                    </tr>
+                   <tr>
+                    <td>
+                        <button class="like-button" onclick="toggleLike(this)">
+                            <svg class="heart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C16.09 3.81 17.76 3 19.5 3 22.58 3 25 5.42 25 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                            Me gusta
+                        </button>
+                    </td>
+                </tr>
+                    
+                    <tr>
+                        <td class="product"><a href="http://127.0.0.1:5500/ProductoCemento.html"><p>Cemento Cruz Azul 50KG</p></td>
+                    </tr>
+                    <tr>
+                        <td class="price">$100</td>
+                    </tr>
         
-        <div class="providers-grid">
-            <!-- Producto 1 -->
+                </table>
+            </div>
+        
+            <div class="product-container">
+                <div class="product-box">
+                    <table>
+                        <tr>
+                            <td class="product-image2"></td>
+                        </tr>
+                       <tr>
+                        <td>
+                            <button class="like-button" onclick="toggleLike(this)">
+                                <svg class="heart-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C16.09 3.81 17.76 3 19.5 3 22.58 3 25 5.42 25 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                                </svg>
+                                Me gusta
+                            </button>
+                        </td>
+                    </tr>
+                        
+                        <tr>
+                            <td class="product"><a href="http://127.0.0.1:5500/ProductoCemento.html"><p>Flexómetro 8 Metros Cinta 25 Mm</p></td>
+                        </tr>
+                        <tr>
+                            <td class="price">$100</td>
+                        </tr>
             
-            <div class="product-box product1-box">
-                <div class="product-image"></div>
-                <p>Cemento Cruz Azul 50KG 
-                    <div class="bloque">
-                        <div class="tex">
-                         Precio $100
-                        </div>   
-                    </div>
-                </p>
-            </div>
-
-            <!-- Producto 2 -->
-            <div class="product-box product2-box">
-                <div class="product-image"></div>
-                <p>Flexómetro 8 Metros Cinta 25 Mm <span class="sub">Precio $100</span></p>
-            </div>
-
-            <!-- Producto 3 -->
-            <div class="product-box product3-box">
-                <div class="product-image"></div>
-                <p>Arco profesional tubular de acero $170</p>
-            </div>
-
-            <!-- Producto 4 -->
-            <div class="product-box product4-box">
-                <div class="product-image"></div>
-                <p>Tubo sanitario de norma advance pvc 110mm $90</p>
-            </div>
-
-            <!-- Producto 5 -->
-            <div class="product-box product5-box">
-                <div class="product-image"></div>
-                <p>MASILLA 40 KG – CEMIX $160</p>
-            </div>
-
-            <!-- Producto 6 -->
-            <div class="product-box product6-box">
-                <div class="product-image"></div>
-                <p>PERFIL ZR200 C20 RECTANGULAR VERDE $420</p>
-            </div>
-    </main>
-
+                    </table>
+                </div>
+        
     
-    <main>
-        <div class="providers-grid">
-            <!-- Producto 7 -->
-            <div class="product-box product7-box">
-                <div class="product-image"></div>
-                <p>PUA NACIONAL 34KG C12.5 $1,500</p>
-            </div>
-
-            <!-- Producto 8 -->
-            <div class="product-box product8-box">
-                <div class="product-image"></div>
-                <p>CAT504 CARRETILLA REFORZADA CON BASTIDOR METÁLICO 5 FT3 LLANTA NEUMÁTICA REFORZADA DE 4 CAPAS SURTEK $1,350</p>
-            </div>
-
-            <!-- Producto 9 -->
-            <div class="product-box product9-box">
-                <div class="product-image"></div>
-                <p>Pala Con Mango De Madera Con Puño Contractor Grip, Cuadrada Surtek  $220</p>
-            </div>
-
-            <!-- Producto 10 -->
-            <div class="product-box product10-box">
-                <div class="product-image"></div>
-                <p>TORNILLO AUTOPERFORANTE DE 1 PULGADA PLATA 50 PIEZAS $190</p>
-            </div>
-
-            <!-- Producto 11 -->
-            <div class="product-box product11-box">
-                <div class="product-image"></div>
-                <p>Tornillo Tipo Maquina Galvanizado Con Tuerca 1/4x1/2-100pzas $180</p>
-            </div>
-
-            <!-- Producto 12 -->
-            <div class="product-box product12-box">
-                <div class="product-image"></div>
-                <p>Producto 6</p>
-            </div>
     </main>
+
+-<script>
+    function toggleLike(button) {
+        button.parentElement.parentElement.classList.toggle('liked');
+    }
+</script>
 
     
     <footer>
