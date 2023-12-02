@@ -100,14 +100,16 @@
             color: #fff; /* Color blanco para el título */
         }
 
-        footer {
+       footer {
             text-align: left;
             padding: 10px;
-            background-color: #000; /* Color negro para el pie de página */
-            color: #fff; /* Color blanco para el texto del pie de página */
+            background-color: #000;
+            color: #fff;
             position: fixed;
             width: 100%;
             bottom: 0;
+            z-index: 1000; /* Asegura que el pie de página esté sobre otros elementos */
+            display: none; /* Inicialmente oculto */
         }
 
         /* Estilo para los iconos */
