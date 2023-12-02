@@ -20,30 +20,25 @@
             margin-top: 70px;
         }
         
-        body {
+         body {
             margin: 0;
             padding: 0;
             font-family: 'Arial', sans-serif;
-            
-              
-        background: url('FondoMaterialesVladi.jpg') center/cover no-repeat fixed; /* Cambia 'tu_imagen_de_fondo.jpg' con la URL de tu imagen de fondo */
+            background: url('FondoMaterialesVladi.jpg') center/cover no-repeat fixed;
             position: relative;
         }
 
-        /* Agrega un fondo oscuro semi-transparente */
         body::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            
-            
-        height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Ajusta el último valor para cambiar la opacidad (0 es transparente, 1 es completamente opaco) */
-        z-index: -1;
+            height: 115%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
         }
-
+        
         header {
             background-color: #000; /* Color negro para el menú */
             padding: 15px;
@@ -124,6 +119,79 @@
             color: #fff; /* Color blanco para el texto del nombre de la empresa */
         }
         
+
+        /* Estilos para la sección de contacto */
+        .container {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .container2 {
+            background-color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        
+        .contact-details {
+            width: 45%;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        /* Espaciado entre los cuadros */
+        .location {
+            margin-bottom: 20px;
+        }
+        .location2 {
+            margin-bottom: 20px;
+        }
+
+        /* Espaciado entre los cuadros */
+        .contact-details {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Alineación de los cuadros de contacto y ubicación */
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .container2 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .title2 {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease-out;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .hce {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
     </style>
 </head>
 
@@ -140,20 +208,71 @@
             <a href="https://baeza-san.github.io/Materiales-Vlady.github.io/Contacto.html"><i class="fas fa-envelope"></i> Contacto</a>
         </div>
     </header>
-
-    <main>
+<main>
         <div class="title">
-            <h1>Contacto</h1>
+            <h1><i class="fas fa-user"></i> Contacto</h1>
         </div>
-        <!-- Contenido de tu página va aquí -->
-        <p>Bienvenido a Materiales Vlady. Ofrecemos una amplia gama de productos y servicios. Contáctenos para más información.</p>
+    
+        <div class="container">
+            <div class="location">
+                <h1> <i class="fas fa-map-marker-alt icon"></i>Ubicación</h1>
+                <a href="https://maps.app.goo.gl/5KdYmh9vJqWsrL3d6"><img src="Ubimg.png" alt="Ubicación"></a>
+                <p><i class="far fa-calendar-alt icon"></i> Horario de atención.</p>
+                <p><i class="far fa-clock icon"></i> 7:00 am - 8:00 pm</p>
+            </div>
+            <div class="contact-details">
+                <div class="container2">
+                    <div class="location">
+                        <h1 ><i class="fab fa-whatsapp icon"></i> Número de WhatsApp. </h1>
+                        <p><i class="fas fa-phone-alt"></i> 982 103 7689 </p>
+                        <p><i class="fas fa-phone-alt"></i> 982 102 6262 </p>
+                        <h1><i class="fas fa-envelope icon"></i> Correo.</h1>
+                        <p><i class="fas fa-user"></i> Josuebaeza9000@gmail.com</p>
+                    </div>
+                    <div class="container2">
+                        <div class="location">
+                            <h1 ><i class="fab fa-whatsapp icon"></i> Número de WhatsApp. </h1>
+                            <p><i class="fas fa-phone-alt"></i> 982 103 7689 </p>
+                            <p><i class="fas fa-phone-alt"></i> 982 102 6262 </p>
+                            <h1><i class="fas fa-envelope icon"></i> Correo.</h1>
+                            <p><i class="fas fa-user"></i> Josuebaeza9000@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </main>
 
+    
     <footer>
         <p>&copy; 2023 Materiales Vlady. Todos los derechos reservados.</p>
-        <a href="https://maps.app.goo.gl/5KdYmh9vJqWsrL3d6"><i class="fas fa-map-marker-alt"></i> Calle faustino zanches y porvenir, 24440 Santo Domingo Kesté, Camp. </a>
+        <a href="https://maps.app.goo.gl/5KdYmh9vJqWsrL3d6"><i class="fas fa-map-marker-alt"></i> Calle Faustino Zanches y Porvenir, 24440 Santo Domingo Kesté, Camp. </a>
     </footer>
-</body>
 
+
+<!-- Agrega este script al final de tu cuerpo HTML -->
+    
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            var contentHeight = $('body').height();
+            var windowHeight = $(window).height();
+            var scroll = $(window).scrollTop();
+            var distanceToBottom = contentHeight - (scroll + windowHeight);
+
+            // Ajustamos la condición para que el footer aparezca solo cuando estemos cerca del final de la página
+            if (distanceToBottom < -120) { // Puedes ajustar este valor según tus necesidades
+                $('footer').fadeIn();
+            } else {
+                $('footer').fadeOut();
+            }
+        });
+    });
+</script>
+    
+</body>
 </html>
 
