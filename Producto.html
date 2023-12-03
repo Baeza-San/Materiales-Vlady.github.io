@@ -42,7 +42,7 @@
             width: 100%;
             
             
-        height: 130%;
+        height: 125%;
             background: rgba(0, 0, 0, 0.5); /* Ajusta el último valor para cambiar la opacidad (0 es transparente, 1 es completamente opaco) */
         z-index: -1;
         }
@@ -662,7 +662,7 @@
             var distanceToBottom = contentHeight - (scroll + windowHeight);
 
             // Ajustamos la condición para que el footer aparezca solo cuando estemos cerca del final de la página
-            if (distanceToBottom < -115) { // Puedes ajustar este valor según tus necesidades
+            if (distanceToBottom < -110) { // Puedes ajustar este valor según tus necesidades
                 $('footer').fadeIn();
             } else {
                 $('footer').fadeOut();
