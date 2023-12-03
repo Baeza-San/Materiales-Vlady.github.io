@@ -271,21 +271,22 @@
 </script>
 
     <script>
-        // Agrega el código de desplazamiento aquí
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                var contentHeight = $('body').height();
-                var windowHeight = $(window).height();
-                var scroll = $(window).scrollTop();
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            var contentHeight = $('body').height();
+            var windowHeight = $(window).height();
+            var scroll = $(window).scrollTop();
+            var distanceToBottom = contentHeight - (scroll + windowHeight);
 
-                if (contentHeight - (scroll + windowHeight) < 10) {
-                    $('footer').fadeIn();
-                } else {
-                    $('footer').fadeOut();
-                }
-            });
+            // Ajustamos la condición para que el footer aparezca solo cuando estemos cerca del final de la página
+            if (distanceToBottom < -120) { // Puedes ajustar este valor según tus necesidades
+                $('footer').fadeIn();
+            } else {
+                $('footer').fadeOut();
+            }
         });
-    </script>
+    });
+</script>
 
 </body>
 
