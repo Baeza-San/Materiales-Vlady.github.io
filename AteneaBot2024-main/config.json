@@ -1,0 +1,13 @@
+{
+  "client": {
+    "host": "LosTilines202.aternos.me",
+    "port": "242876",
+    "username": "Bot2024"
+  },
+  "logLevel": ["error", "log", "debug"],
+  "action": {
+    "commands": ["forward", "back", "left", "right", "jump"],
+    "holdDuration": 5000,
+    "retryDelay": 15000
+  }
+}
