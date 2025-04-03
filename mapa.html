@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo - Ruta a Boca de Río</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+        #info {
+            margin: 10px;
+            font-size: 18px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Mapa Interactivo: Ruta a Playa Boca de Río</h2>
+    <div id="map"></div>
+    <button onclick="obtenerUbicacion()">Actualizar Ubicación</button>
+    <button onclick="calcularRuta()">Calcular Ruta</button>
+    <div id="info">Distancia: -- km</div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Coordenadas de Playa Boca de Río
+        const destino = { lat: 19.3609660, lng: -90.717752};
+
+        // Inicializar el mapa
+        const map = L.map('map').setView([destino.lat, destino.lng], 13);
+
+        // Agregar capa de mapa base
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Agregar marcador en Playa Boca de Río
+        L.marker([destino.lat, destino.lng]).addTo(map)
+            .bindPopup("Playa Boca de Río")
+            .openPopup();
+
+        let usuarioMarker, rutaLayer;
+
+        // Obtener la ubicación del usuario con alta precisión
+        function obtenerUbicacion() {
+            if (!navigator.geolocation) {
+                alert("La geolocalización no está soportada en tu navegador.");
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(pos => {
+                const { latitude, longitude } = pos.coords;
+
+                // Si ya existe un marcador, actualiza su posición
+                if (usuarioMarker) {
+                    usuarioMarker.setLatLng([latitude, longitude])
+                        .bindPopup("Tu ubicación actual")
+                        .openPopup();
+                } else {
+                    usuarioMarker = L.marker([latitude, longitude], { draggable: true })
+                        .addTo(map)
+                        .bindPopup("Tu ubicación actual")
+                        .openPopup();
+                }
+
+                map.setView([latitude, longitude], 13);
+            }, error => {
+                console.error("Error al obtener la ubicación:", error);
+                alert("No se pudo obtener la ubicación. Asegúrate de tener el GPS activado y otorgar permisos.");
+            }, { enableHighAccuracy: true });
+        }
+
+        obtenerUbicacion(); // Obtener la ubicación al cargar la página
+
+        // Función para calcular la ruta
+        function calcularRuta() {
+            if (!usuarioMarker) {
+                alert("Esperando ubicación del usuario...");
+                return;
+            }
+
+            const userLatLng = usuarioMarker.getLatLng();
+            const osrmUrl = `https://router.project-osrm.org/route/v1/driving/${userLatLng.lng},${userLatLng.lat};${destino.lng},${destino.lat}?overview=full&geometries=geojson`;
+
+            fetch(osrmUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.routes.length === 0) {
+                        alert("No se encontró una ruta.");
+                        return;
+                    }
+
+                    const ruta = data.routes[0];
+                    const distanciaKm = (ruta.distance / 1000).toFixed(2);
+                    document.getElementById("info").innerText = `Distancia: ${distanciaKm} km`;
+
+                    const coordenadasRuta = ruta.geometry.coordinates.map(coord => [coord[1], coord[0]]);
+
+                    // Si ya hay una ruta dibujada, la elimina
+                    if (rutaLayer) {
+                        map.removeLayer(rutaLayer);
+                    }
+
+                    // Dibujar la nueva ruta en azul
+                    rutaLayer = L.polyline(coordenadasRuta, { color: 'blue', weight: 5 }).addTo(map);
+
+                    map.fitBounds(rutaLayer.getBounds());
+                })
+                .catch(error => {
+                    console.error("Error al obtener la ruta:", error);
+                    alert("Hubo un problema al calcular la ruta.");
+                });
+        }
+    </script>
+
+</body>
+</html>
